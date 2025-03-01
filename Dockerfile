@@ -1,5 +1,5 @@
 # 构建阶段
-FROM rust:1.83.0-slim-bookworm as builder
+FROM rust:1.83.0-slim-bookworm AS builder
 
 WORKDIR /app
 
@@ -23,11 +23,11 @@ RUN rustup target add x86_64-unknown-linux-gnu && \
     cp target/x86_64-unknown-linux-gnu/release/cursor-api /app/cursor-api
 
 # 运行阶段
-FROM debian:bookworm-slim
+FROM debian:bookworm-slim AS runner
 
 WORKDIR /app
 
-ENV TZ=Asia/Shanghai
+ENV TZ=Australia/Sydney
 
 # 安装运行时依赖
 RUN apt-get update && \

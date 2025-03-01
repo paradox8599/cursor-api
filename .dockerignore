@@ -1,0 +1,14 @@
+/target
+/get-token/target
+/*.log
+/*.env
+/static/tokeninfo.min.html
+node_modules
+.DS_Store
+/.vscode
+/.cargo
+/.token
+/.token-list
+/cursor-api
+/cursor-api.exe
+/release
