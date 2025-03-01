@@ -178,6 +178,22 @@ fn load_tokens(token_file: &str) -> Vec<TokenInfo> {
     let token_list_file =
         std::env::var("TOKEN_LIST_FILE").unwrap_or_else(|_| ".token-list".to_string());
 
+    let token_file_path = std::path::Path::new(&token_file);
+    if let Ok(token_file_exists) = token_file_path.try_exists() {
+        if !token_file_exists {
+            // 如果 token 文件不存在，创建一个空文件
+            std::fs::File::create(&token_file).unwrap();
+        }
+    }
+
+    let token_list_path = std::path::Path::new(&token_list_file);
+    if let Ok(token_list_exists) = token_list_path.try_exists() {
+        if !token_list_exists {
+            // 如果 token_list 文件不存在，创建一个空文件
+            std::fs::File::create(&token_list_file).unwrap();
+        }
+    }
+
     // 读取并规范化 .token 文件
     let tokens = if let Ok(content) = std::fs::read_to_string(token_file) {
         let normalized = content.replace("\r\n", "\n");
