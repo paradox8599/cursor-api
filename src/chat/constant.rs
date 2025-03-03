@@ -47,6 +47,8 @@ def_pub_const!(
 def_pub_const!(GEMINI_2_0_FLASH_EXP, "gemini-2.0-flash-exp");
 def_pub_const!(DEEPSEEK_V3, "deepseek-v3");
 def_pub_const!(DEEPSEEK_R1, "deepseek-r1");
+def_pub_const!(CLAUDE_3_7_SONNET, "claude-3.7-sonnet");
+def_pub_const!(CLAUDE_3_7_SONNET_THINKING, "claude-3.7-sonnet-thinking");
 
 // #[derive(Clone, PartialEq, rkyv::Archive, rkyv::Deserialize, rkyv::Serialize)]
 // pub enum ModelType {
@@ -178,9 +180,11 @@ create_model!(
     GEMINI_2_0_FLASH_EXP, GOOGLE,
     DEEPSEEK_V3, DEEPSEEK,
     DEEPSEEK_R1, DEEPSEEK,
+    CLAUDE_3_7_SONNET, ANTHROPIC,
+    CLAUDE_3_7_SONNET_THINKING, ANTHROPIC,
 );
 
-pub const USAGE_CHECK_MODELS: [&str; 11] = [
+pub const USAGE_CHECK_MODELS: [&str; 13] = [
     CLAUDE_3_5_SONNET_20241022,
     CLAUDE_3_5_SONNET,
     GEMINI_EXP_1206,
@@ -192,13 +196,17 @@ pub const USAGE_CHECK_MODELS: [&str; 11] = [
     GEMINI_1_5_FLASH_500K,
     CLAUDE_3_HAIKU_200K,
     CLAUDE_3_5_SONNET_200K,
+    CLAUDE_3_7_SONNET,
+    CLAUDE_3_7_SONNET_THINKING,
 ];
 
-pub const LONG_CONTEXT_MODELS: [&str; 4] = [
+pub const LONG_CONTEXT_MODELS: [&str; 6] = [
     GPT_4O_128K,
     GEMINI_1_5_FLASH_500K,
     CLAUDE_3_HAIKU_200K,
     CLAUDE_3_5_SONNET_200K,
+    CLAUDE_3_7_SONNET,
+    CLAUDE_3_7_SONNET_THINKING,
 ];
 
 // include!("constant/models.rs");

@@ -70,6 +70,8 @@ gemini-2.0-flash-thinking-exp
 gemini-2.0-flash-exp
 deepseek-v3
 deepseek-r1
+claude-3.7-sonnet
+claude-3.7-sonnet-thinking
 ```
 
 ## 接口说明
